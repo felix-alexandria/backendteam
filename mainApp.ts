@@ -1,5 +1,5 @@
 import { Application, Request, Response } from "express"
-export const mainApp = (app: Application) {
+export const mainApp = (app: Application) => {
     try {
         app.get("/", (req: Request, res: Response) => {
             try {
