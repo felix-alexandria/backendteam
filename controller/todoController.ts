@@ -17,3 +17,18 @@ export const createTask = async (req: Request, res: Response) => {
     });
   }
 };
+
+export const viewTask = async (req: Request, res: Response) => {
+  try {
+    const get = await todoModel.find()
+
+    return res.status(200).json({
+      message: "todo viewed successfully",
+      data: get,
+    });
+  } catch (error) {
+    return res.status(404).json({
+      message: "error view task",
+    });
+  }
+} 
