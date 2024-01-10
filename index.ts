@@ -7,7 +7,8 @@ import { dbConfig } from "./utils/dbConfig";
 // config()
 
 
-const port: number = parseInt(process.env.PORT!);
+// const port: number = parseInt(process.env.PORT!);
+const port: number = 4455;
 
 const app: Application = express();
 

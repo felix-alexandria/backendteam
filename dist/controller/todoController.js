@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createTask = void 0;
+exports.viewTask = exports.createTask = void 0;
 const todoModel_1 = __importDefault(require("../model/todoModel"));
 const createTask = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -30,3 +30,18 @@ const createTask = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     }
 });
 exports.createTask = createTask;
+const viewTask = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const get = yield todoModel_1.default.find();
+        return res.status(200).json({
+            message: "todo viewed successfully",
+            data: get,
+        });
+    }
+    catch (error) {
+        return res.status(404).json({
+            message: "error view task",
+        });
+    }
+});
+exports.viewTask = viewTask;

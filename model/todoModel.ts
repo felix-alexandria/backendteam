@@ -3,7 +3,7 @@ import mongoose, { Date, Schema, model } from "mongoose";
 interface iTodo {
   taskName: string;
   description: string;
-  dueDate?: Date;
+  dueDate?: string;
 }
 
 interface iTodoData extends iTodo, Document {}
@@ -17,7 +17,7 @@ const TodoModel = new Schema<iTodoData>(
       type: String,
     },
     dueDate: {
-      type: new Date(),
+      type: String,
     },
   },
   { timestamps: true }

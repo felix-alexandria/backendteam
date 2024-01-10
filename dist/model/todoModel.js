@@ -9,7 +9,7 @@ const TodoModel = new mongoose_1.Schema({
         type: String,
     },
     dueDate: {
-        type: new Date(),
+        type: String,
     },
 }, { timestamps: true });
 exports.default = (0, mongoose_1.model)("todos", TodoModel);
